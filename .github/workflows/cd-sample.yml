@@ -1,0 +1,39 @@
+name: Continuous Deployment
+
+on:
+  workflow_dispatch:
+    # This event allows manual triggering of the workflow
+    # You can provide optional inputs here if needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Test
+      run: |
+        echo 'Deploying to Test'
+        sleep 30
+
+    - name: Deploy to QA
+      run: |
+        echo 'Deploying to QA'
+        sleep 30
+
+    - name: Deploy to Staging
+      run: |
+        echo 'Deploying to Staging'
+        sleep 30
+
+    - name: Deploy to Canary
+      run: |
+        echo 'Deploying to Canary'
+        sleep 30
+
+    - name: Deploy to Production
+      run: |
+        echo 'Deploying to Production'
+        sleep 30
